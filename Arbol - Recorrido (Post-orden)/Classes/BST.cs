@@ -6,7 +6,6 @@ namespace Arbol___Recorrido__Post_orden_.Classes
 {
     class BST : IBST<Tecnologo>
     {
-        //Atributos:
         private Tecnologo Dato;
         private BST izquierdo, derecho;
 
