@@ -21,7 +21,7 @@ namespace Arbol___Recorrido__Post_orden_.Classes
 
         public void Insertar(Tecnologo elemento)
         {
-            if (Dato == null)
+            if (estaVacio())
             {
                 Dato = elemento;
             } else
@@ -36,14 +36,15 @@ namespace Arbol___Recorrido__Post_orden_.Classes
                     derecho.Insertar(elemento);
                 } else
                 {
-                    throw new Exception("Matriculas duplicadas.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Matriculas duplicadas.");
                 }
             }
         }
 
         public bool Existe(int identificador)
         {
-            if (Dato != null)
+            if (!estaVacio())
             {
                 if (identificador == Dato.Matricula)
                 {
@@ -65,7 +66,7 @@ namespace Arbol___Recorrido__Post_orden_.Classes
 
         public Tecnologo Obtener(int identificador)
         {
-            if (Dato != null)
+            if (!estaVacio())
             {
                 if (identificador == Dato.Matricula)
                 {
@@ -86,7 +87,7 @@ namespace Arbol___Recorrido__Post_orden_.Classes
 
         public void PostOrder()
         {
-            if(Dato != null)
+            if(!estaVacio())
             {
                 if(izquierdo != null) izquierdo.PostOrder();
                 if (derecho != null) derecho.PostOrder();

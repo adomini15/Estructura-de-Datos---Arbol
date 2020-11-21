@@ -12,7 +12,7 @@ namespace Arbol___Recorrido__Post_orden_.Classes
         //Propiedad mediante la cual podremos hacer comparacion.
         public uint Matricula { get; set; }
         public string NombreCompleto { get; set; }
-        public Carrera Carrera { get; set; }    
+        public Carrera Carrera { get; set; }     
 
         public int CompareTo(Tecnologo other)
         {
@@ -21,6 +21,8 @@ namespace Arbol___Recorrido__Post_orden_.Classes
             return 0;
         }
     }
+
+   
 
     // Enumeración de Carreras.
     enum Carrera
