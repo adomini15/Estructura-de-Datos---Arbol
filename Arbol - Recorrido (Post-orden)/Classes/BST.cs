@@ -9,15 +9,9 @@ namespace Arbol___Recorrido__Post_orden_.Classes
         private Tecnologo Dato;
         private BST izquierdo, derecho;
 
-        public bool estaVacio()
-        {
-            return Dato == null;
-        }
+        public bool estaVacio() => Dato == null;
 
-        public bool esHoja()
-        {
-            return Dato != null && izquierdo == null && derecho == null;
-        }
+        public bool esHoja() => Dato != null && izquierdo == null && derecho == null;
 
         public void Insertar(Tecnologo elemento)
         {
@@ -102,13 +96,28 @@ namespace Arbol___Recorrido__Post_orden_.Classes
         
         public void InOrder()
         {
-            throw new NotImplementedException();
+            if (!estaVacio())
+            {
+                if (izquierdo != null) izquierdo.PostOrder();
+                Console.WriteLine($"\n Matrícula: {Dato.Matricula} - " +
+                    $"Nombre Completo: {Dato.NombreCompleto} - Carreara: {Dato.Carrera}.");
+                if (derecho != null) derecho.PostOrder();
+                
+            }
         }
 
 
         public void PreOrder()
         {
-            throw new NotImplementedException();
+            if (!estaVacio())
+            {
+                Console.WriteLine($"\n Matrícula: {Dato.Matricula} - " +
+                    $"Nombre Completo: {Dato.NombreCompleto} - Carreara: {Dato.Carrera}.");
+                if (izquierdo != null) izquierdo.PostOrder();
+                if (derecho != null) derecho.PostOrder();
+
+                
+            }
         }
 
         // Visitar el canal Makigas e ir a los videos 14 y 20 de la serie de estructura de datos

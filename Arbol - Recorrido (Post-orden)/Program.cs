@@ -30,7 +30,7 @@ namespace Arbol___Recorrido__Post_orden_
 
             Tecnologo t4 = new Tecnologo
             {
-                Matricula = 1002,
+                Matricula = 1004,
                 NombreCompleto = "Mariana Peralta",
                 Carrera = Carrera.Multimedia
             };
@@ -69,7 +69,7 @@ namespace Arbol___Recorrido__Post_orden_
             List<Tecnologo> tecnologos = new List<Tecnologo>(new[] { t3, t4, t5, t6 });
             tecnologos.ForEach(t => bst.Insertar(t));
 
-            //bst.PostOrder();
+            bst.PostOrder();
         }
     }
 }
